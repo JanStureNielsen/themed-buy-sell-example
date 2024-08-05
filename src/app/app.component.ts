@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatSliderModule} from "@angular/material/slider";
+import {MatLabel} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import {MatSliderModule} from "@angular/material/slider";
   imports: [
     RouterOutlet,
     FormsModule,
+    MatLabel,
     MatButtonModule,
     MatButtonToggleModule,
     MatSliderModule,
