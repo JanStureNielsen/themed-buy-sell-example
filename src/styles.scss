@@ -1,4 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+@import 'themes';
+
+:root {
+  @include mat.all-component-themes($theme-light);
+}
+
+$theme-buy-light: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+  ),
+));
+
+$theme-sell-light: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$red-palette,
+  ),
+));
+
+
+.theme-dark {
+  @include mat.all-component-colors($theme-dark);
+}
+
+.buy {
+  @include mat.all-component-colors($theme-buy-light);
+}
+
+.sell {
+  @include mat.all-component-colors($theme-sell-light);
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
