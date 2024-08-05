@@ -1,0 +1,35 @@
+<h2>Order Component</h2>
+<div class="order-control" [class]="isSell ? 'sell' : 'buy'">
+  <div>
+    <mat-button-toggle-group name="side" [(ngModel)]="isSell">
+      <mat-button-toggle [value]="false">BUY</mat-button-toggle>
+      <mat-button-toggle [value]="true">SELL</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div>
+    <mat-label>Units</mat-label>
+    <mat-slider
+      [max]="unitsMax"
+      [min]="unitsMin"
+      [step]="unitsStep"
+      discrete showTickMarks>
+      <input matSliderThumb [(ngModel)]="units" #unitsSlider>
+    </mat-slider>
+  </div>
+
+  <div>
+    <mat-label>Price</mat-label>
+    <mat-slider
+      [max]="priceMax"
+      [min]="priceMin"
+      [step]="priceStep"
+      discrete showTickMarks>
+      <input matSliderThumb [(ngModel)]="price" #priceSlider>
+    </mat-slider>
+  </div>
+
+  <div>
+    <button mat-flat-button>Submit Order</button>
+  </div>
+</div>
