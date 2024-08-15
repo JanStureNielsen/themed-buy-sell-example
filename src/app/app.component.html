@@ -1,13 +1,37 @@
+<mat-toolbar class="mat-elevation-z3">
 
+  <button mat-icon-button >
+    <mat-icon>menu</mat-icon>
+  </button>
+<!--
+  <span>My App</span>
+  <span class="header-spacer"></span>
 
+  <button mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button>
 
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+-->
 
-<fm-header/>
+</mat-toolbar>
 
-  <section>
+<mat-sidenav-container>
 
-    <fm-order/>
+  <mat-sidenav opened mode="side" [style.width]="'250px'">
 
-  </section>
+    <fm-sidenav>
 
-<fm-footer/>
+    </fm-sidenav>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
