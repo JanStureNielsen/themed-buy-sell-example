@@ -5,6 +5,11 @@
 
 :root {
   @include mat.all-component-themes($theme-light);
+
+  @include mat.typography-hierarchy($theme-light);
+
+  @include mat.system-level-colors($theme-light);
+  @include mat.system-level-typography($theme-light);
 }
 
 $theme-buy-light: mat.define-theme((
