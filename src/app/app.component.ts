@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import { Component, signal, computed } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatListModule} from "@angular/material/list";
+import { MatIconModule} from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatToolbarModule } from "@angular/material/toolbar";
 
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { OrderComponent } from "./components/order/order.component";
-import {MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
-import {MatListItem, MatListModule} from "@angular/material/list";
-import {MatIconModule} from "@angular/material/icon";
-import {MatButtonModule, MatIconButton} from "@angular/material/button";
-import {MatToolbar, MatToolbarModule} from "@angular/material/toolbar";
-import {SidenavComponent} from "./components/sidenav/sidenav.component";
+import { SidenavComponent } from "./components/sidenav/sidenav.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
-    RouterLink,
+    RouterModule,
 
     MatButtonModule,
     MatIconModule,
@@ -33,4 +33,7 @@ import {SidenavComponent} from "./components/sidenav/sidenav.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  collapsed = signal(false);
+  sidenavWidth = computed(() => this.collapsed() ? '65px' : '250px');
+
 }
