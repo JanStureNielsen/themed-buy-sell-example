@@ -7,7 +7,7 @@ mat-sidenav-container {
 }
 
 mat-sidenav, mat-sidenav-content {
-  transition: all
+  transition: all 200ms ease-in-out;
 }
 
 /*
