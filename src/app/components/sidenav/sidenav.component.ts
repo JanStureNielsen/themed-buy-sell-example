@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import {Component, computed, Input, signal} from '@angular/core';
+
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 
@@ -37,4 +38,13 @@ export class SidenavComponent {
       route: 'analytics'
     }
   ]);
+
+  sidenavCollapsed = signal(false);
+  profilePicSize = computed(() => this.sidenavCollapsed() ? '32' : '100');
+
+  @Input()
+  set collapsed(value: boolean) {
+    this.sidenavCollapsed.set(value);
+  }
+
 }
