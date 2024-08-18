@@ -45,16 +45,20 @@ export class SidenavComponent {
       route: 'dashboard'
     },
     {
-      icon: 'video_library',
-      label: 'Content',
+      icon: 'chevron_right',
+      label: 'Order',
       route: 'content'
     },
     {
       icon: 'analytics',
       label: 'Analytics',
       route: 'analytics'
-    }
+    },
+    {
+      icon: 'settings',
+      label: 'Settings',
+      route: 'settings'
+    },
   ]);
-
 
 }
