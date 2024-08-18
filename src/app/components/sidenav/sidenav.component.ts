@@ -1,8 +1,10 @@
-import {Component, computed, Input, signal} from '@angular/core';
+import { Component, computed, Input, signal } from '@angular/core';
 
-import {MatListModule} from "@angular/material/list";
-import {MatIconModule} from "@angular/material/icon";
-import {RouterModule} from "@angular/router";
+import { MatListModule } from "@angular/material/list";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import {FormsModule} from "@angular/forms";
 
 export type MenuItem = {
   icon: string;
@@ -16,14 +18,26 @@ export type MenuItem = {
   standalone: true,
   imports: [
     RouterModule,
+    FormsModule,
 
+    MatButtonToggleModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
   ],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
+  sidenavCollapsed = signal(false);
+  profilePicSize = computed(() => this.sidenavCollapsed() ? '32' : '100');
+
+  @Input()
+  set collapsed(value: boolean) {
+    this.sidenavCollapsed.set(value);
+  }
+
+  lightTheme: boolean = false;
+
   menuItems = signal<MenuItem[]>([
     {
       icon: 'dashboard',
@@ -42,12 +56,5 @@ export class SidenavComponent {
     }
   ]);
 
-  sidenavCollapsed = signal(false);
-  profilePicSize = computed(() => this.sidenavCollapsed() ? '32' : '100');
-
-  @Input()
-  set collapsed(value: boolean) {
-    this.sidenavCollapsed.set(value);
-  }
 
 }
