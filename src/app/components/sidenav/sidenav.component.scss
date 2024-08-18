@@ -1,3 +1,7 @@
+:host * {
+  transition: all 200ms ease-in-out;
+}
+
 .sidenav-header {
   padding-top: 24px;
   text-align: center;
@@ -9,6 +13,8 @@
   }
 
   .header-text {
+    height: 3rem;
+
     > h2 {
       margin: 0;
       font-size: 1rem;
