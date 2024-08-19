@@ -36,8 +36,6 @@ export class SidenavComponent {
     this.sidenavCollapsed.set(value);
   }
 
-  lightTheme: boolean = false;
-
   menuItems = signal<MenuItem[]>([
     {
       icon: 'dashboard',
