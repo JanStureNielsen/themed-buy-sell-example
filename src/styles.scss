@@ -3,13 +3,15 @@
 @include mat.core();
 @import 'themes';
 
+$theme-active: $theme-dark;
+
 :root {
-  @include mat.all-component-themes($theme-light);
+  @include mat.all-component-themes($theme-active);
 
-  @include mat.typography-hierarchy($theme-light);
+  @include mat.typography-hierarchy($theme-active);
 
-  @include mat.system-level-colors($theme-light);
-  @include mat.system-level-typography($theme-light);
+  @include mat.system-level-colors($theme-active);
+  @include mat.system-level-typography($theme-active);
 }
 
 $theme-buy-light: mat.define-theme((
