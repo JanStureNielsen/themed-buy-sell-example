@@ -1,22 +1,13 @@
-<div>
+<div class="theme-mode-selector">
 
-  <h4>Theme Mode Icons</h4>
-  <mat-button-toggle-group name="theme-mode" [(ngModel)]="themeMode">
+  <h4>Theme Mode</h4>
+  <mat-button-toggle-group name="theme-mode-toggle-group" [(ngModel)]="themeMode">
     @for (mode of themeModes(); track mode.label) {
-      <mat-button-toggle value="{{mode.mode}}" matTooltip="{{mode.label}}">
+      <mat-button-toggle value="{{mode.mode}}" matTooltip="{{mode.label}}" class="theme-mode-toggle">
         <span class="material-symbols-outlined">{{mode.icon}}</span>
         <span>{{mode.label}}</span>
       </mat-button-toggle>
     }
   </mat-button-toggle-group>
-
-  <h4>Icon options</h4>
-  <div class="theme-mode-options">
-    <span class="material-symbols-outlined">routine</span>
-    <span class="material-symbols-outlined">wb_sunny</span>
-    <span class="material-symbols-outlined">brightness_6</span>
-    <span class="material-symbols-outlined">light_mode</span>
-    <span class="material-symbols-outlined">sunny</span>
-  </div>
 
 </div>
