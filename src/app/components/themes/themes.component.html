@@ -1,5 +1,11 @@
 <div>
   <h2>Theme Mode</h2>
+  <mat-button-toggle-group name="theme-mode" [(ngModel)]="themeMode">
+    <mat-button-toggle value="dark"><span class="material-symbols-outlined">dark_mode</span></mat-button-toggle>
+    <mat-button-toggle value="auto"><span class="material-symbols-outlined">routine</span></mat-button-toggle>
+    <mat-button-toggle value="light"><span class="material-symbols-outlined">light_mode</span></mat-button-toggle>
+  </mat-button-toggle-group>
+
   <mat-button-toggle-group name="theme-mode" [(ngModel)]="lightTheme">
     <mat-button-toggle [value]="false">Dark</mat-button-toggle>
     <mat-button-toggle [value]="true">Light</mat-button-toggle>
@@ -18,8 +24,8 @@
   </div>
 
   <mat-radio-group class="theme-mode-selector">
-    @for (mode of themeModes; track mode) {
-      <mat-radio-button>{{mode.label}}</mat-radio-button>
+    @for (mode of themeModes(); track mode.label) {
+      <mat-radio-button><mat-icon>{{mode.icon}}</mat-icon>{{mode.label}}</mat-radio-button>
     }
   </mat-radio-group>
 
