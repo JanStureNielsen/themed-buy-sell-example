@@ -54,9 +54,9 @@ export class ThemesComponent {
       },
       {
         icon: 'routine',
-          mode: 'auto',
+        mode: 'auto',
         label: 'System Mode',
       },
-      ]);
+  ]);
 
 }
