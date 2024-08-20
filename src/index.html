@@ -1,6 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>
+    const THEME_PREFERENCE_LOCAL_STORAGE_KEY = 'themePreference';
+    const DARK_MODE_CLASS_NAME = 'theme-dark';
+    const LIGHT_MODE_CLASS_NAME = 'theme-light';
+    const PREFERS_COLOR_SCHEME_DARK = '(prefers-color-scheme: dark)';
+
+
+    const theme = localStorage.getItem(THEME_PREFERENCE_LOCAL_STORAGE_KEY) ?? 'auto';
+    const prefersDark = window.matchMedia && window.matchMedia(PREFERS_COLOR_SCHEME_DARK).matches;
+    const documentClassList = this.document.documentElement.classList;
+
+    // clearing classes before setting them.
+    this.document.documentElement.className = '';
+    if (theme === 'dark' || (theme === 'auto' && prefersDark)) {
+      documentClassList.add(DARK_MODE_CLASS_NAME);
+    } else {
+      documentClassList.add(LIGHT_MODE_CLASS_NAME);
+    }
+
+    if(location.search.includes('uwu')) {
+      documentClassList.add('uwu');
+    }
+  </script>
   <meta charset="utf-8">
   <title>ThemedBuySell</title>
   <base href="/">
