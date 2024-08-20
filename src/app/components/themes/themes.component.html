@@ -3,7 +3,7 @@
   <h4>Theme Mode</h4>
   <mat-button-toggle-group name="theme-mode-toggle-group" [(ngModel)]="themeMode">
     @for (mode of themeModes(); track mode.label) {
-      <mat-button-toggle value="{{mode.mode}}" matTooltip="{{mode.label}}" class="theme-mode-toggle">
+      <mat-button-toggle value="{{mode.mode}}" matTooltip="{{mode.label}}">
         <span class="material-symbols-outlined">{{mode.icon}}</span>
         <span>{{mode.label}}</span>
       </mat-button-toggle>
