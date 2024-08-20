@@ -5,6 +5,7 @@
     @for (mode of themeModes(); track mode.label) {
       <mat-button-toggle value="{{mode.mode}}" matTooltip="{{mode.label}}">
         <span class="material-symbols-outlined">{{mode.icon}}</span>
+        <span>{{mode.label}}</span>
       </mat-button-toggle>
     }
   </mat-button-toggle-group>
