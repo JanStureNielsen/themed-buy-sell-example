@@ -1,16 +1,12 @@
 <div>
 
-  <h4>Icons</h4>
+  <h4>Theme Mode Icons</h4>
   <mat-button-toggle-group name="theme-mode" [(ngModel)]="themeMode">
-    <mat-button-toggle value="dark"><span class="material-symbols-outlined">dark_mode</span></mat-button-toggle>
-    <mat-button-toggle value="auto"><span class="material-symbols-outlined">routine</span></mat-button-toggle>
-    <mat-button-toggle value="light"><span class="material-symbols-outlined">light_mode</span></mat-button-toggle>
-  </mat-button-toggle-group>
-
-  <h4>Text</h4>
-  <mat-button-toggle-group name="theme-mode" [(ngModel)]="lightTheme">
-    <mat-button-toggle [value]="false">Dark</mat-button-toggle>
-    <mat-button-toggle [value]="true">Light</mat-button-toggle>
+    @for (mode of themeModes(); track mode.label) {
+      <mat-button-toggle value="{{mode.mode}}" matTooltip="{{mode.label}}">
+        <span class="material-symbols-outlined">{{mode.icon}}</span>
+      </mat-button-toggle>
+    }
   </mat-button-toggle-group>
 
   <h4>Icon options</h4>
