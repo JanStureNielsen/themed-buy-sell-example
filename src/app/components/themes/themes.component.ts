@@ -19,7 +19,8 @@ export type ThemeMode = {
   icon: string;
   mode: string;
   label: string;
-};
+
+}
 
 @Component({
   selector: 'fm-themes',
@@ -36,6 +37,8 @@ export type ThemeMode = {
   styleUrl: './themes.component.scss'
 })
 export class ThemesComponent {
+  themeMode: string = 'auto';
+
   lightTheme = false;
 
   themeModes = signal<ThemeMode[]>([
