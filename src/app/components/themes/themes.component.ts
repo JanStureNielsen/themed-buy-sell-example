@@ -45,17 +45,17 @@ export class ThemesComponent {
       {
         icon: 'light_mode',
         mode: 'light',
-        label: 'Light Mode',
+        label: 'Light',
       },
       {
         icon: 'dark_mode',
         mode: 'dark',
-        label: 'Dark Mode',
+        label: 'Dark',
       },
       {
         icon: 'routine',
         mode: 'auto',
-        label: 'System Mode',
+        label: 'System',
       },
   ]);
 
