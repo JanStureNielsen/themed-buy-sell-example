@@ -9,10 +9,11 @@
        [routerLink]="item.route"
        routerLinkActive
        #rla="routerLinkActive"
-       [activated]="rla.isActive">
+       [activated]="rla.isActive"
+       matTooltip="{{item.label}}">
       <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'" matListItemIcon>{{item.icon}}</mat-icon>
       @if (!sidenavCollapsed()) {
-      <span matListItemLine class="nav-list-item-label">{{item.label}}</span>
+      <span matListItemTitle class="nav-list-item-label">{{item.label}}</span>
       }
     </a>
   }
