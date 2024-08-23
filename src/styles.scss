@@ -3,7 +3,7 @@
 @include mat.core();
 @import 'themes';
 
-$theme-active: $theme-dark;
+$theme-active: $theme-light;
 
 :root {
   @include mat.all-component-themes($theme-active);
