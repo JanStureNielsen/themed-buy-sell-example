@@ -5,6 +5,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import {FormsModule} from "@angular/forms";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 export type MenuItem = {
   icon: string;
@@ -23,6 +24,7 @@ export type MenuItem = {
     MatButtonToggleModule,
     MatIconModule,
     MatListModule,
+    MatTooltipModule
   ],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss'
