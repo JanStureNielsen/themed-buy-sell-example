@@ -39,8 +39,6 @@ export type ThemeMode = {
 export class ThemesComponent {
   themeMode: string = 'auto';
 
-  lightTheme = false;
-
   themeModes = signal<ThemeMode[]>([
       {
         icon: 'light_mode',
