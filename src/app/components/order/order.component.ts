@@ -6,7 +6,7 @@ import {MatLabel} from "@angular/material/form-field";
 import {MatSliderModule} from "@angular/material/slider";
 
 @Component({
-  selector: 'fm-order',
+  selector: 'order',
   standalone: true,
     imports: [
         FormsModule,
