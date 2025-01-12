@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+.mat-mdc-list-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.example-list-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.example-list-wrapping {
+  max-width: 500px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
