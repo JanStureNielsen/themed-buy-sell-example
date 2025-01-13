@@ -6,8 +6,7 @@ import {MatLabel} from "@angular/material/form-field";
 import {MatSliderModule} from "@angular/material/slider";
 
 @Component({
-  selector: 'order',
-  standalone: true,
+    selector: 'order',
     imports: [
         FormsModule,
         MatButtonModule,
@@ -15,8 +14,8 @@ import {MatSliderModule} from "@angular/material/slider";
         MatLabel,
         MatSliderModule,
     ],
-  templateUrl: './order.component.html',
-  styleUrl: './order.component.scss'
+    templateUrl: './order.component.html',
+    styleUrl: './order.component.scss'
 })
 export class OrderComponent {
   isSell: boolean = false;

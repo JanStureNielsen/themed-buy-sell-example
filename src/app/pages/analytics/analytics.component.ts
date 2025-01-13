@@ -24,15 +24,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'fm-analytics',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatListModule,
-    MatTableModule
-  ],
-  templateUrl: './analytics.component.html',
-  styleUrl: './analytics.component.scss'
+    selector: 'fm-analytics',
+    imports: [
+        MatButtonModule,
+        MatListModule,
+        MatTableModule
+    ],
+    templateUrl: './analytics.component.html',
+    styleUrl: './analytics.component.scss'
 })
 export class AnalyticsComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];

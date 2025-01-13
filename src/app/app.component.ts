@@ -13,24 +13,21 @@ import { OrderComponent } from "./components/order/order.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterModule,
-
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule,
-
-    FooterComponent,
-    HeaderComponent,
-    OrderComponent,
-    SidenavComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [
+        RouterModule,
+        MatButtonModule,
+        MatIconModule,
+        MatListModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        FooterComponent,
+        HeaderComponent,
+        OrderComponent,
+        SidenavComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   collapsed = signal(false);

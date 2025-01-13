@@ -23,18 +23,17 @@ export type ThemeMode = {
 }
 
 @Component({
-  selector: 'fm-themes',
-  standalone: true,
-  imports: [
-    FormsModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatIconModule,
-    MatRadioModule,
-    MatTooltip
-  ],
-  templateUrl: './themes.component.html',
-  styleUrl: './themes.component.scss'
+    selector: 'fm-themes',
+    imports: [
+        FormsModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatIconModule,
+        MatRadioModule,
+        MatTooltip
+    ],
+    templateUrl: './themes.component.html',
+    styleUrl: './themes.component.scss'
 })
 export class ThemesComponent {
   themeMode: string = 'auto';

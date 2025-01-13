@@ -6,15 +6,14 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import {BreakpointObserver} from "@angular/cdk/layout";
 
 @Component({
-  selector: 'fm-header',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'fm-header',
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+        MatToolbarModule,
+    ],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 

@@ -15,19 +15,17 @@ export type MenuItem = {
 }
 
 @Component({
-  selector: 'fm-sidenav',
-  standalone: true,
-  imports: [
-    RouterModule,
-    FormsModule,
-
-    MatButtonToggleModule,
-    MatIconModule,
-    MatListModule,
-    MatTooltipModule
-  ],
-  templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.scss'
+    selector: 'fm-sidenav',
+    imports: [
+        RouterModule,
+        FormsModule,
+        MatButtonToggleModule,
+        MatIconModule,
+        MatListModule,
+        MatTooltipModule
+    ],
+    templateUrl: './sidenav.component.html',
+    styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
   sidenavCollapsed = signal(false);
