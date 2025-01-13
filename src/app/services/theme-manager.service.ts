@@ -11,8 +11,12 @@ export const PREFERS_COLOR_SCHEME_DARK = '(prefers-color-scheme: dark)';
 })
 export class ThemeManager {
   readonly document = inject(DOCUMENT);
-  readonly localStorage = inject(LOCAL_STORAGE);
+  //readonly localStorage = inject(LOCAL_STORAGE);
   readonly platformId = inject(PLATFORM_ID);
 
+
+  public myPlatformId() {
+    return this.platformId;
+  }
 
 }
