@@ -1,10 +1,10 @@
 @use '@angular/material' as mat;
+@use 'themes' as theme;
 
 @include mat.elevation-classes();
 @include mat.app-background();
-@import 'themes';
 
-$theme-active: $theme-light;
+$theme-active: theme.$theme-light;
 
 :root {
   @include mat.all-component-themes($theme-active);
@@ -31,17 +31,17 @@ $theme-sell-light: mat.define-theme((
 
 
 .theme-dark {
-  @include mat.all-component-colors($theme-dark);
+  @include mat.all-component-colors(theme.$theme-dark);
 }
 
 .buy {
   // TODO: should only be components in order component
-  @include mat.all-component-colors($theme-buy-light);
+  @include mat.all-component-colors(theme.$theme-buy-light);
 }
 
 .sell {
   // TODO: should only be components in order component
-  @include mat.all-component-colors($theme-sell-light);
+  @include mat.all-component-colors(theme.$theme-sell-light);
 }
 
 html, body {
