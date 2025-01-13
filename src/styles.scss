@@ -36,12 +36,12 @@ $theme-sell-light: mat.define-theme((
 
 .buy {
   // TODO: should only be components in order component
-  @include mat.all-component-colors(theme.$theme-buy-light);
+  @include mat.all-component-colors($theme-buy-light);
 }
 
 .sell {
   // TODO: should only be components in order component
-  @include mat.all-component-colors(theme.$theme-sell-light);
+  @include mat.all-component-colors($theme-sell-light);
 }
 
 html, body {
