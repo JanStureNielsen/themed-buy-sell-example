@@ -41,6 +41,7 @@ export class ThemeManagerService {
   }
 
   updateThemeClass = effect(() => {
+    console.log('setting document body');
     const theme = this.currentTheme();
     document.body.classList.remove(...this.themes.map((t) => `${t.id}-theme`));
     document.body.classList.add(`${theme.id}-theme`);
