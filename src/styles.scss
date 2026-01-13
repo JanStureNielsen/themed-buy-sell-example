@@ -22,7 +22,7 @@
   );
 }
 
-.buy {
+.theme-color-buy {
   @include mat.theme(
     (
       color: mat.$azure-palette
@@ -30,7 +30,7 @@
   );
 }
 
-.sell {
+.theme-color-sell {
   @include mat.theme(
     (
       color: mat.$red-palette
