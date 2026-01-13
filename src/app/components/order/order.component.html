@@ -1,12 +1,12 @@
 <div class="order-control" [class]="isSell ? 'theme-color-sell' : 'theme-color-buy'">
   <div class="side">
-    <mat-button-toggle-group name="side" [(ngModel)]="isSell">
+    <mat-button-toggle-group class="side-toggle" name="side" [(ngModel)]="isSell" hideSingleSelectionIndicator>
       <mat-button-toggle [value]="false">BUY</mat-button-toggle>
       <mat-button-toggle [value]="true">SELL</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 
-  <div class="units">
+  <div class="units full-width">
     <mat-label>Units</mat-label>
     <mat-slider
       [max]="unitsMax"
@@ -17,18 +17,18 @@
     </mat-slider>
   </div>
 
-  <div class="price">
+  <div class="price full-width">
     <mat-label>Price</mat-label>
     <mat-slider
       [max]="priceMax"
       [min]="priceMin"
       [step]="priceStep"
       discrete showTickMarks>
-      <input matSliderThumb [(ngModel)]="price" #priceSlider>
+      <input matSliderThumb [(ngModel)]="price" #priceSlider class="price">
     </mat-slider>
   </div>
 
-  <div>
-    <button mat-flat-button>Submit Order</button>
+  <div class="submit">
+    <button mat-flat-button class="full-width">Submit Order</button>
   </div>
 </div>
