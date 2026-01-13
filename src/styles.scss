@@ -1,58 +1,41 @@
 @use '@angular/material' as mat;
-@use 'themes' as theme;
-
-@include mat.elevation-classes();
-@include mat.app-background();
-
-$theme-active: theme.$theme-light;
 
 :root {
-  @include mat.all-component-themes($theme-active);
-
-  @include mat.typography-hierarchy($theme-active);
-
-  @include mat.system-level-colors($theme-active);
-  @include mat.system-level-typography($theme-active);
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        theme-type: light,
+      ),
+      typography: Roboto
+    )
+  );
 }
 
 .theme-type-dark {
   @include mat.theme(
-      (
-        color: (
-          primary: mat.$azure-palette,
-          theme-type: dark
-        )
+    (
+      color: (
+        theme-type: dark
       )
+    )
   );
 }
 
-$theme-buy-light: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-  ),
-));
-
-$theme-sell-light: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$red-palette,
-  ),
-));
-
-
-.theme-dark {
-  @include mat.all-component-colors(theme.$theme-dark);
-}
-
 .buy {
-  // TODO: should only be components in order component
-  @include mat.all-component-colors($theme-buy-light);
+  @include mat.theme(
+    (
+      color: mat.$azure-palette
+    )
+  );
 }
 
 .sell {
-  // TODO: should only be components in order component
-  @include mat.all-component-colors($theme-sell-light);
+  @include mat.theme(
+    (
+      color: mat.$red-palette
+    )
+  );
 }
 
 html, body {
@@ -63,3 +46,4 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
