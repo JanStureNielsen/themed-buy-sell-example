@@ -2,4 +2,44 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 190px;
+}
+
+.side {
+  width: 100%;
+}
+
+.side-toggle.mat-button-toggle-group {
+  display: flex;
+  witdh: 100%;
+  box-sizing: border-box;
+}
+
+.side-toggle .mat-button-toggle {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.side mat-button-toggle {
+  witdh: 100%;
+}
+
+.side .mat-button-toggle-label-content {
+  justify-content: center;
+}
+
+.units {
+  flex-grow: 1;
+  witdh: 100%
+}
+
+.price {
+  flex-grow: 1;
+  witdh: 100%
+}
+
+.full-width {
+  display: block;
+  width: 100%;
 }
