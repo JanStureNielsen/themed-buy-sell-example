@@ -16,11 +16,7 @@ export interface Theme {
 })
 export class ThemeManagerService {
   private readonly themes: Theme[] = [
-    {
-      id: 'deep-blue-dark',
-      primary: '#1976D2',
-      displayName: 'Deep Blue Dark',
-    },
+    { id: 'deep-blue-dark', primary: '#1976D2', displayName: 'Deep Blue Dark', },
     { id: 'green', primary: '#00796B', displayName: 'Green' },
     { id: 'orange', primary: '#E65100', displayName: 'Orange' },
     { id: 'purple', primary: '#6200EE', displayName: 'Purple' },
@@ -41,9 +37,10 @@ export class ThemeManagerService {
   }
 
   updateThemeClass = effect(() => {
-    console.log('setting document body');
     const theme = this.currentTheme();
-    document.body.classList.remove(...this.themes.map((t) => `${t.id}-theme`));
-    document.body.classList.add(`${theme.id}-theme`);
+``
+    console.log('setting document body', theme);
+    document.body.classList.remove(...this.themes.map((t) => `theme-${t.id}`));
+    document.body.classList.add(`theme-${theme.id}`);
   });
 }
