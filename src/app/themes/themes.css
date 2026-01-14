@@ -1,5 +1,5 @@
-@import "./greentheme.css";
-@import "./orangetheme.css";
-@import "./purpletheme.css";
-@import "./redtheme.css";
-@import "./deep-bluetheme.css";
+@import "app/themes/theme-green.css";
+@import "app/themes/theme-orange.css";
+@import "app/themes/theme-purple.css";
+@import "app/themes/theme-red.css";
+@import "app/themes/theme-deep-blue.css";
