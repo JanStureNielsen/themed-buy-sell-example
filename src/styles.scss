@@ -40,7 +40,10 @@ html {
 }
 
 body {
+  color: var(--mat-sys-on-surface);
+  background: var(--mat-sys-surface);
+
   margin: 0;
-  font-family: Roboto; //TODO: jsn -- why is this necessary?
+  font-family: Roboto;
 }
 
