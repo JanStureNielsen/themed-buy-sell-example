@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 
+@import "app/themes/themes";
+
 .theme-type-dark {
   @include mat.theme(
     (
@@ -37,12 +39,12 @@ html {
         typography: Roboto
       )
   );
+
+  color: var(--mat-sys-on-surface);
+  background: var(--mat-sys-surface);
 }
 
 body {
-  color: var(--mat-sys-on-surface);
-  background: var(--mat-sys-surface);
-
   margin: 0;
   font-family: Roboto;
 }
