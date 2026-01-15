@@ -1,28 +1,19 @@
 import {Component, inject, signal} from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
-import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatButtonToggleChange, MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatIconModule } from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
-import {MatTooltip, MatTooltipModule} from "@angular/material/tooltip";
+import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatRadioModule} from "@angular/material/radio";
-import {ThemeManagerService} from "../../services/theme-manager.service";
-import {MatToolbar, MatToolbarModule} from "@angular/material/toolbar";
-import {MatMenu, MatMenuModule} from "@angular/material/menu";
+import {ThemeManagerService, ThemeMode} from "../../services/theme-manager.service";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatMenuModule} from "@angular/material/menu";
 
-/**
- * Angular Material Symbols:
- *
- *   light_mode -- light mode
- *   dark_mode  -- dark mode
- *   routine    -- system mode
- */
-
-export type ThemeMode = {
+export interface ThemeModeOption {
   icon: string;
-  mode: string;
+  mode: ThemeMode;
   label: string;
-
 }
 
 @Component({
@@ -42,9 +33,8 @@ export type ThemeMode = {
 })
 export class ThemesComponent {
   themeService = inject(ThemeManagerService);
-  themeMode: string = 'auto';
 
-  themeModes = signal<ThemeMode[]>([
+  themeModes = signal<ThemeModeOption[]>([
       {
         icon: 'light_mode',
         mode: 'light',
@@ -62,4 +52,7 @@ export class ThemesComponent {
       },
   ]);
 
+  onThemeModeChange(event: MatButtonToggleChange): void {
+    this.themeService.setThemeMode(event.value);
+  }
 }
