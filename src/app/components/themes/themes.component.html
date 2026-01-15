@@ -1,34 +1,32 @@
-<div class="theme-mode-selector">
+<div class="appearance-settings">
+  <h3>Appearance</h3>
 
-  <h4>Theme Mode</h4>
   <mat-button-toggle-group name="theme-mode-toggle-group"
+                           class="theme-mode-toggle"
                            [value]="themeService.themeMode()"
                            (change)="onThemeModeChange($event)">
     @for (mode of themeModes(); track mode.label) {
-      <mat-button-toggle [value]="mode.mode" [matTooltip]="mode.label">
+      <mat-button-toggle [value]="mode.mode">
         <span class="material-symbols-outlined">{{mode.icon}}</span>
         <span>{{mode.label}}</span>
       </mat-button-toggle>
     }
   </mat-button-toggle-group>
-  <mat-toolbar>
-    <span>Angular Custom Themes</span>
-    <button mat-icon-button [matMenuTriggerFor]="themeMenu">
-      <mat-icon>format_color_fill</mat-icon>
-    </button>
-    <mat-menu #themeMenu="matMenu">
-      @for (theme of themeService.getThemes(); track theme.id) {
-        <button mat-menu-item (click)="themeService.setTheme(theme.id)">
-          <div class="theme-menu-item">
-            <div
-              class="color-preview"
-              [style.background-color]="theme.primary"
-            ></div>
-            <span>{{ theme.displayName }}</span>
-          </div>
-        </button>
-      }
-    </mat-menu>
-  </mat-toolbar>
 
+  <div class="theme-grid">
+    @for (theme of themeService.getThemes(); track theme.id) {
+      <button
+        class="theme-swatch"
+        [class.selected]="themeService.currentTheme().id === theme.id"
+        (click)="themeService.setTheme(theme.id)"
+        [attr.aria-label]="theme.displayName">
+        <span class="swatch-color" [style.background-color]="theme.primary"></span>
+        @if (themeService.currentTheme().id === theme.id) {
+          <span class="check-overlay">
+            <span class="material-symbols-outlined">check</span>
+          </span>
+        }
+      </button>
+    }
+  </div>
 </div>
