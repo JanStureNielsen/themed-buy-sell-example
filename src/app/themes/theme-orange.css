@@ -1,8 +1,5 @@
 /* Note: Color palettes are generated from primary: #E65100 */
 .theme-orange {
-  /* COLOR SYSTEM VARIABLES */
-  color-scheme: light;
-
   /* Primary palette variables */
   --mat-sys-primary: light-dark(#a83900, #ffb59a);
   --mat-sys-on-primary: light-dark(#ffffff, #5b1b00);
