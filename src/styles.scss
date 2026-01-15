@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 
-@import "app/themes/themes";
+@use "app/themes/themes";
 
 .theme-type-dark {
   @include mat.theme(
