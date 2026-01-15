@@ -20,6 +20,7 @@ export class ThemeManagerService {
   private readonly mediaQuery = window.matchMedia(PREFERS_COLOR_SCHEME_DARK);
 
   private readonly themes: Theme[] = [
+    { id: 'azure-blue', primary: '#005cbb', displayName: 'Azure Blue', },
     { id: 'deep-blue', primary: '#1976D2', displayName: 'Deep Blue', },
     { id: 'green', primary: '#00796B', displayName: 'Green' },
     { id: 'orange', primary: '#E65100', displayName: 'Orange' },
