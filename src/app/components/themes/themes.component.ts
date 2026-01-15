@@ -1,7 +1,7 @@
 import {Component, inject, signal} from '@angular/core';
 
 import { MatButtonToggleChange, MatButtonToggleModule } from "@angular/material/button-toggle";
-import {ThemeManagerService, ThemeMode} from "../../services/theme-manager.service";
+import { ThemeManagerService, ThemeMode } from "../../services/theme-manager.service";
 
 export interface ThemeModeOption {
   icon: string;
